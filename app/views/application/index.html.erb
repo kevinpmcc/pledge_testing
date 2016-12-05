@@ -1,0 +1,6 @@
+<h1>pledge4pledge</h1>
+<% if !user_signed_in? %>
+  <%= render 'users/shared/twitter.html.erb' %>
+<% else %>
+<a href="https://twitter.com/intent/tweet" class="twitter-hashtag-button" data-size="large" data-text="I pledge to do a thing if company X pledges to do a thing. #pledge4pledge" data-dnt="true" data-show-count="true">Tweet about your pledge!!!!</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<% end %>
