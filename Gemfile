@@ -21,7 +21,7 @@ gem 'omniauth'
 gem 'omniauth-twitter'
 # Use jquery as the JavaScript library
 
-gem 'dotenv'
+gem 'dotenv-rails'
 
 gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks

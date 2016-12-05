@@ -3,11 +3,11 @@ class User < ApplicationRecord
   TEMP_EMAIL_REGEX = /\Achange@me/  # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :confirmable,
-    :recoverable, :rememberable, :trackable, :validatable,
+    :recoverable, :rememberable, :trackable,
     :omniauthable
 
 
-  validates_format_of :email, :without => TEMP_EMAIL_REGEX, on: :update
+  #validates_format_of :email, :without => TEMP_EMAIL_REGEX, on: :update
 
   def self.find_for_oauth(auth, signed_in_resource = nil)
 
@@ -24,7 +24,7 @@ class User < ApplicationRecord
         user = User.new(
           name: auth.extra.raw_info.name,
           #username: auth.info.nickname || auth.uid,
-          email: email ? email : "#{TEMP_EMAIL_PREFIX}-#{auth.uid}-#{auth.provider}.com",
+          #email: email,
           password: Devise.friendly_token[0,20]
         )
         user.skip_confirmation!
