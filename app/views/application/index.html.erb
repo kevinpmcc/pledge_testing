@@ -1,4 +1,5 @@
 <h1>pledge4pledge</h1>
+<p>Number of Pledges: <%= UserPledge.all.count %></p>
 <% if !user_signed_in? %>
   <%= render 'users/shared/twitter.html.erb' %>
   <% else %>
