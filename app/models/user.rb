@@ -6,6 +6,8 @@ class User < ApplicationRecord
     :recoverable, :rememberable, :trackable,
     :omniauthable
 
+  has_many :user_pledges
+  has_many :pledges, through: :user_pledges
 
   #validates_format_of :email, :without => TEMP_EMAIL_REGEX, on: :update
 
